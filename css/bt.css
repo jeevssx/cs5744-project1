@@ -1,0 +1,122 @@
+/* Blacksburg Transit theme: maroon and silver over white, after the BT bus livery.
+   Layout: maroon navbar + silver stripe, silver page header, sticky sidebar, content cards. */
+:root {
+  --bt-maroon: #861F41;
+  --bt-maroon-dark: #5C1530;
+  --bt-maroon-soft: #F6E9EE;
+  --bt-silver: #A7A9AC;
+  --bt-silver-light: #E6E7E9;
+  --bt-silver-faint: #F4F4F5;
+  --bt-ink: #24262A;
+  --bt-muted: #5F6368;
+}
+
+html { scroll-padding-top: 80px; }
+body { background: #FFFFFF; color: var(--bt-ink); }
+a { color: var(--bt-maroon); }
+a:hover { color: var(--bt-maroon-dark); }
+
+/* navbar */
+.bt-navbar { background: var(--bt-maroon); padding-top: .6rem; padding-bottom: .6rem; }
+.bt-navbar .navbar-brand { font-weight: 600; letter-spacing: .01em; display: flex; align-items: center; }
+.bt-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.1rem; height: 2.1rem; margin-right: .6rem; border-radius: 50%;
+  background: #FFFFFF; color: var(--bt-maroon); font-weight: 800; font-size: .9rem;
+}
+.bt-navbar .navbar-text { color: rgba(255, 255, 255, .85); font-size: .9rem; }
+.bt-navbar .nav-link { color: rgba(255, 255, 255, .85); }
+.bt-navbar .nav-item.active .nav-link { color: #FFFFFF; font-weight: 600; }
+.bt-stripe { height: 6px; background: linear-gradient(90deg, var(--bt-silver) 0%, #D9DADC 50%, var(--bt-silver) 100%); }
+
+/* hero (index) */
+.bt-hero {
+  margin-bottom: 0;
+  background:
+    linear-gradient(115deg, transparent 0 62%, var(--bt-maroon) 62% 78%, var(--bt-maroon-dark) 78% 100%),
+    linear-gradient(180deg, #F2F2F3 0%, var(--bt-silver-light) 100%);
+  border-bottom: 1px solid var(--bt-silver);
+  padding: 3rem 0;
+}
+.bt-hero h1 { color: var(--bt-maroon); font-weight: 700; max-width: 14em; }
+.bt-hero .lead { color: var(--bt-muted); max-width: 36em; }
+@media (max-width: 767px) {
+  .bt-hero { background: linear-gradient(180deg, #F2F2F3 0%, var(--bt-silver-light) 100%); padding: 2rem 0; }
+  .bt-hero h1 { font-size: 2.2rem; }
+}
+
+/* page header */
+.bt-pagehead {
+  background: linear-gradient(180deg, #F2F2F3 0%, var(--bt-silver-light) 100%);
+  border-bottom: 1px solid var(--bt-silver);
+  padding: 1.25rem 0 1.5rem;
+}
+.bt-pagehead h1 { color: var(--bt-maroon); font-weight: 700; font-size: 2rem; margin: 0; display: flex; align-items: center; }
+.bt-crumb { background: transparent; padding: 0; margin-bottom: .5rem; font-size: .875rem; }
+.bt-crumb .breadcrumb-item.active { color: var(--bt-muted); }
+.bt-secnum {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 2.4rem; height: 2.4rem; margin-right: .75rem; border-radius: .5rem;
+  background: var(--bt-maroon); color: #FFFFFF; font-size: 1.2rem; font-weight: 700;
+}
+
+/* layout */
+.bt-main { padding-top: 2rem; padding-bottom: 2rem; }
+.bt-side-wrap { position: sticky; top: 90px; }
+.bt-side .list-group-item { border-color: var(--bt-silver-light); color: var(--bt-ink); padding: .6rem .9rem; font-size: .95rem; }
+.bt-side .list-group-item:hover { background: var(--bt-silver-faint); }
+.bt-side .list-group-item.active { background: var(--bt-maroon); border-color: var(--bt-maroon); color: #FFFFFF; }
+.bt-num {
+  display: inline-block; width: 1.5rem; margin-right: .4rem; text-align: center;
+  font-weight: 700; color: var(--bt-maroon);
+}
+.bt-side .list-group-item.active .bt-num { color: #FFFFFF; }
+.bt-full { font-weight: 600; background: var(--bt-silver-faint); }
+
+/* cards */
+.bt-card { border-color: var(--bt-silver-light); box-shadow: 0 1px 2px rgba(0, 0, 0, .04); }
+.bt-card .card-header {
+  background: linear-gradient(180deg, #F7F7F8 0%, var(--bt-silver-light) 100%);
+  border-bottom: 2px solid var(--bt-maroon);
+}
+.bt-card .card-header h5 { color: var(--bt-maroon); font-weight: 700; font-size: 1.1rem; }
+.bt-card .card-body > p:last-child, .bt-card .card-body > ul:last-child { margin-bottom: 0; }
+.bt-card p { line-height: 1.65; }
+.bt-group {
+  color: var(--bt-maroon-dark); font-weight: 700; font-size: 1.3rem;
+  margin: 2rem 0 1rem; padding-bottom: .4rem; border-bottom: 2px solid var(--bt-silver);
+}
+.bt-group:first-child { margin-top: 0; }
+.bt-label { color: var(--bt-maroon); font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: .06em; margin-top: .5rem; }
+.bt-meta { margin-bottom: .75rem; }
+.bt-meta .badge { margin-right: .35rem; }
+.bt-list li { margin-bottom: .35rem; }
+.bt-fullhead { color: var(--bt-maroon); font-weight: 700; display: flex; align-items: center; margin: 2.5rem 0 1rem; }
+.bt-fullhead:first-child { margin-top: 0; }
+
+/* badges */
+.badge-bt { background: var(--bt-maroon); color: #FFFFFF; }
+.badge-silver { background: var(--bt-silver-light); color: var(--bt-ink); }
+
+/* tables */
+.bt-table { margin-bottom: 0; font-size: .92rem; }
+.bt-table thead th { background: var(--bt-maroon); color: #FFFFFF; border-color: var(--bt-maroon); white-space: nowrap; }
+.bt-table.table-striped tbody tr:nth-of-type(odd) { background: var(--bt-silver-faint); }
+.bt-table.table-hover tbody tr:hover { background: var(--bt-maroon-soft); }
+.bt-matrix th, .bt-matrix td { text-align: center; }
+.bt-matrix th:first-child, .bt-matrix td:first-child { text-align: left; }
+.bt-x { color: var(--bt-maroon); font-weight: 700; }
+.bt-total td { font-weight: 700; border-top: 2px solid var(--bt-maroon); }
+.bt-tcap { font-weight: 700; color: var(--bt-maroon-dark); margin-top: .5rem; }
+
+/* figures */
+.bt-figure { display: block; margin: 1.25rem auto; max-width: 640px; text-align: center; }
+.bt-figure-wide { max-width: 100%; }
+.bt-figure img { border: 1px solid var(--bt-silver-light); }
+.bt-figure .figure-caption { color: var(--bt-muted); font-style: italic; }
+
+/* pager & footer */
+.bt-pager { margin-top: 1rem; }
+.bt-pager .page-link { color: var(--bt-maroon); border-color: var(--bt-silver-light); }
+.bt-pager .page-link:hover { background: var(--bt-maroon-soft); color: var(--bt-maroon-dark); }
+.bt-footer { background: var(--bt-maroon-dark); color: rgba(255, 255, 255, .85); padding: 1.25rem 0; font-size: .9rem; border-top: 6px solid var(--bt-silver); }
